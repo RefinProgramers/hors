@@ -1,0 +1,193 @@
+body {
+    background-image: url("1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 10;
+    min-height: 100vh;
+    position: relative;
+    cursor: crosshair;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url("1.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: blur(1px);
+    transform: scale(1.05);
+    z-index: -1;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: white;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 9998;
+    animation: flash 10s infinite;
+}
+
+@keyframes flash {
+    0%, 96%, 100% {
+        opacity: 0;
+    }
+
+    97% {
+        opacity: 0.08;
+    }
+
+    98% {
+        opacity: 0;
+    }
+
+    99% {
+        opacity: 0.04;
+    }
+}
+
+.head {
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    padding: 30px;
+    margin: 40px auto;
+    border-radius: 15px;
+    max-width: 800px;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+}
+
+.glitch {
+    position: relative;
+    color: white;
+    font-size: 35px;
+    text-shadow: 0 0 10px red;
+    animation: glitch 1s infinite;
+}
+
+@keyframes glitch {
+    0% {
+        transform: translate(0);
+    }
+
+    20% {
+        transform: translate(-2px, 2px);
+    }
+
+    40% {
+        transform: translate(2px, -2px);
+    }
+
+    60% {
+        transform: translate(-2px, 0);
+    }
+
+    80% {
+        transform: translate(2px, 2px);
+    }
+
+    100% {
+        transform: translate(0);
+    }
+}
+
+.horor-text {
+    color: #ff0000;
+    font-weight: bold;
+    text-shadow:
+        0 0 5px red,
+        0 0 10px red,
+        0 0 20px darkred;
+
+    animation: kedip 1.5s infinite;
+}
+
+@keyframes kedip {
+    0%, 100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+}
+
+.kesurupan {
+    color: red;
+    animation: getar 0.15s infinite;
+}
+
+@keyframes getar {
+    0% {
+        transform: translate(0);
+    }
+
+    25% {
+        transform: translate(2px, 1px);
+    }
+
+    50% {
+        transform: translate(-2px, -1px);
+    }
+
+    75% {
+        transform: translate(1px, -2px);
+    }
+
+    100% {
+        transform: translate(0);
+    }
+}
+
+.musik {
+    background: #222;
+    color: white;
+    border: 1px solid darkred;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.musik:hover {
+    background: darkred;
+    box-shadow: 0 0 15px red;
+}
+
+.tombol-horor {
+    background: #8b0000;
+    color: white;
+    padding: 5px 15px;
+    border: 2px solid red;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 15px red;
+    transition: 0.3s;
+}
+
+.tombol-horor:hover {
+    background: black;
+    color: red;
+    box-shadow: 0 0 25px red;
+    transform: scale(1.1);
+}
+
+.tombol-horor:active {
+    transform: scale(0.95);
+}
+
+.footer {
+    background-color: rgba(0, 0, 0, 0.85);
+    color: #aaa;
+    text-align: left;
+    padding: 20px;
+    margin-top: 40px;
+    border-top: 1px solid #8b0000;
+    border-radius: 15px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 8px red;
+}
